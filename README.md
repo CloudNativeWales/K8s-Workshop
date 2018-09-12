@@ -88,8 +88,22 @@ If the azure-vote-front takes more than 5 minutes to be assigned an external ip,
 kubectl delete -f https://raw.githubusercontent.com/CloudNativeWales/ProgNet/master/azure-vote.yaml
 ``` 
 
+## Kubernetes Dashboard
 
-### Issues
+If you have Azure CLI installed you can access your cluster's k8s dashboard. Gives you a host of information and functionality. Run the following commands:
+
+ONLY FOR AZURE CLI
+```bash
+az aks get-credentials --resource-group progNetK8s --name myAKSCluster
+
+az aks browse --resource-group progNetK8s --name myAKSCluster
+```
+
+Try some of the features from the dashboard. Can you scale one of your deployments? 
+
+Be careful with the dashboard though, you don't want to end up like [Tesla](https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
+
+## Issues
 If you have issue regarding duplicate names that exist in aks, delete the kubeconfig and start again
 
 ```bash
