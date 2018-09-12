@@ -56,3 +56,16 @@ You can find more detail about the service using:
 kubectl describe service elastic
 ```
 It includes information about the service e.g. the 7 endpoints for the 7 pods that we've spun up.
+
+You can also scale up/down the replicas using the following commands.
+
+To get the deployment name:
+```bash
+kubectl get deployments
+```
+
+Get the deployment name and scale down the number of pods running
+
+```bash
+kubectl scale deploy/<DeploymentName> --replicas=2
+```
