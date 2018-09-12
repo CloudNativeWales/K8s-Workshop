@@ -4,6 +4,12 @@ In this exercise, we will run a pod and in that pod we will run a single contain
 
 ## Let's get pinging
 
+Make sure your terminal is connected to the cluster, run this command if it isn't
+
+```bash
+az aks get-credentials --resource-group progNetK8s --name myAKSCluster
+```
+
 We will use 'kubectl run'. This command creates and run a particular image. The pod will create and run an alpine image that will ping Cloudflare's public DNS resolver 
 
 ```bash
