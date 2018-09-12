@@ -87,3 +87,11 @@ If the azure-vote-front takes more than 5 minutes to be assigned an external ip,
 ```bash
 kubectl delete -f https://raw.githubusercontent.com/CloudNativeWales/ProgNet/master/azure-vote.yaml
 ``` 
+
+
+### Issues
+If you have issue regarding duplicate names that exist in aks, delete the kubeconfig and start again
+
+```bash
+rm -r ~/.kube
+```
