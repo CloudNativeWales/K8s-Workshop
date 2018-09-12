@@ -61,3 +61,27 @@ aks-nodepool1-35631116-1   Ready     agent     23m       v1.9.9
 aks-nodepool1-35631116-2   Ready     agent     23m       v1.9.9
 ```
 
+## Deploy a sample app
+
+We will deploy a simple [voting app](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough) with the following command
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/CloudNativeWales/ProgNet/master/azure-vote.yaml
+```
+
+You should get a message that says a front end and a back end service has been created
+
+Website is currently deploying and is not yet ready to be accessed externally yet.
+
+Run the following command and you will see that EXTERNAL-IP is in 'pending' state
+
+```bash
+kubectl get service azure-vote-front --watch
+```
+It might take some time for the application to get externally available. Once it is, you will be able to navigate to website.
+
+If the azure-vote-front takes more than 5 minutes to be assigned an external ip, delete the deployment and try again.
+
+```bash
+kubectl delete -f https://raw.githubusercontent.com/CloudNativeWales/ProgNet/master/azure-vote.yaml
+``` 
