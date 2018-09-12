@@ -19,7 +19,9 @@ If the response includes the following then the ResourceGroup has been created s
 
 ## Create a 3-node cluster
 
+```bash
 az aks create --resource-group progNetK8s --name myAKSCluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
+```
 
 Leave this running, might take a few minutes (10-15 mins) to create the cluster. When running you should see this:
 
