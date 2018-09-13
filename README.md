@@ -99,6 +99,12 @@ az aks get-credentials --resource-group progNetK8s --name myAKSCluster
 az aks browse --resource-group progNetK8s --name myAKSCluster
 ```
 
+If you are getting errors when accessing dashboard, use the following:
+
+```bash
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+```
+
 Try some of the features from the dashboard. Can you scale one of your deployments? 
 
 Be careful with the dashboard though, you don't want to end up like [Tesla](https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
