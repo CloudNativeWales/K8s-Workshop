@@ -41,6 +41,12 @@ kubectl logs deploy/pingpong --tail 1 --follow
 --follow: streams logs in real-time
 --tail: how many lines to be seen from the end
 
+If you wan to view the logs of a specific pod use:
+
+```bash
+kubectl logs -f POD-NAME
+```
+
 ## Scale the deployment
 ```bash
 kubectl scale deploy/pingpong --replicas 8
@@ -68,3 +74,12 @@ kubectl logs -l run=pingpong --tail 1
 ```
 
 You can see that our scaled deployment has pinged 1.1.1.1 8 times already. Unfortunately, you cannot --follow logs from multiple pods.
+
+## Deleting Deployments and Services
+
+You can delete deployments and services using:
+
+```bash
+kubectl delete deployment -l app=<AppName>
+kubectl delete service -l app=<AppName>
+```
