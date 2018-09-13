@@ -38,7 +38,7 @@ kubectl expose
 This allows us to connect to our pods. Let's expose elasticsearch HTTP api port:
 
 ```bash
-kubectl expose deploy/elastic --port 9200
+kubectl expose deploy/elastic --port 9200 --type=LoadBalancer
 ```
 
 This command will show you the internal IP address that was allocated to it

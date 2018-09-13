@@ -80,6 +80,5 @@ You can see that our scaled deployment has pinged 1.1.1.1 8 times already. Unfor
 You can delete deployments and services using:
 
 ```bash
-kubectl delete deployment -l app=<AppName>
-kubectl delete service -l app=<AppName>
+kubectl delete deployment <deploymentname>
 ```
