@@ -1,13 +1,15 @@
 # Spin Up Kubernetes Cluster in AKS
 
-Follow these steps to spin up a Kubernetes Cluster in AKS with 3 nodes
+If you need to create a trial Azure account sign up [here](https://azure.microsoft.com/free/)
+
+Follow these steps to spin up a Kubernetes Cluster in AKS with 2 nodes.
 
 You can use Shell in Azure Portal or [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 ## Create ResourceGroup
 
 ```bash
-az group create --name progNetK8s --location westeurope
+az group create --name k8sWorkshop --location westeurope
 ```
 If the response includes the following then the ResourceGroup has been created successfully
 
@@ -20,7 +22,7 @@ If the response includes the following then the ResourceGroup has been created s
 ## Create a 2-node cluster
 
 ```bash
-az aks create --resource-group progNetK8s --name myAKSCluster --node-count 2 --enable-addons monitoring --generate-ssh-keys
+az aks create --resource-group k8sWorkshop --name myAKSCluster --node-count 2 --enable-addons monitoring --generate-ssh-keys
 ```
 
 Leave this running, might take a few minutes (10-15 mins) to create the cluster. When running you should see this:
@@ -41,7 +43,7 @@ az aks install-cli
 
 Connect to cluster using:
 ```bash
-az aks get-credentials --resource-group progNetK8s --name myAKSCluster
+az aks get-credentials --resource-group k8sWorkshop --name myAKSCluster
 ```
 
 You should get a response like this:
@@ -67,7 +69,7 @@ aks-nodepool1-35631116-1   Ready     agent     23m       v1.9.9
 We will deploy a simple [voting app](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough) with the following command
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/CloudNativeWales/ProgNet/master/azure-vote.yaml
+kubectl apply -f https://raw.githubusercontent.com/CloudNativeWales/K8s-Workshop/master/azure-vote.yaml
 ```
 
 You should get a message that says a front end and a back end service has been created
@@ -84,7 +86,7 @@ It might take some time for the application to get externally available. Once it
 If the azure-vote-front takes more than 5 minutes to be assigned an external ip, delete the deployment and try again.
 
 ```bash
-kubectl delete -f https://raw.githubusercontent.com/CloudNativeWales/ProgNet/master/azure-vote.yaml
+kubectl delete -f https://raw.githubusercontent.com/CloudNativeWales/K8s-Workshop/master/azure-vote.yaml
 ``` 
 
 ## Kubernetes Dashboard
@@ -93,9 +95,9 @@ If you have Azure CLI installed you can access your cluster's k8s dashboard. Giv
 
 ONLY FOR AZURE CLI
 ```bash
-az aks get-credentials --resource-group progNetK8s --name myAKSCluster
+az aks get-credentials --resource-group k8sWorkshop --name myAKSCluster
 
-az aks browse --resource-group progNetK8s --name myAKSCluster
+az aks browse --resource-group k8sWorkshop --name myAKSCluster
 ```
 
 If you are getting errors when accessing dashboard, use the following:
