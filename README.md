@@ -60,8 +60,8 @@ kubectl get nodes
 You should see the nodes
 ```bash
 NAME                       STATUS    ROLES     AGE       VERSION
-aks-nodepool1-35631116-0   Ready     agent     23m       v1.9.9
-aks-nodepool1-35631116-1   Ready     agent     23m       v1.9.9
+aks-nodepool1-35631116-0   Ready     agent     23m       v1.12.7
+aks-nodepool1-35631116-1   Ready     agent     23m       v1.12.7
 ```
 
 ## Deploy a sample app

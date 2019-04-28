@@ -2,7 +2,7 @@
 
 The smallest deployable entity in Kubernetes is a pod. Container(s) run in a pod.
 
-In this exercise we will see how to spin up multiple containers. We will also see how the Kubernetes controller react when we kill on of the pods when.
+In this exercise we will see how to spin up multiple pods. We will also see how the Kubernetes controller reacts when we kill one of the pods. In this exercise you will also set up a service and expose it.
 
 ## Start some containers
 
