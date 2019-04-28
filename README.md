@@ -20,7 +20,7 @@ If the response includes the following then the ResourceGroup has been created s
 ## Create a 3-node cluster
 
 ```bash
-az aks create --resource-group progNetK8s --name myAKSCluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
+az aks create --resource-group progNetK8s --name myAKSCluster --node-count 2 --enable-addons monitoring --generate-ssh-keys
 ```
 
 Leave this running, might take a few minutes (10-15 mins) to create the cluster. When running you should see this:
@@ -60,7 +60,6 @@ You should see the nodes
 NAME                       STATUS    ROLES     AGE       VERSION
 aks-nodepool1-35631116-0   Ready     agent     23m       v1.9.9
 aks-nodepool1-35631116-1   Ready     agent     23m       v1.9.9
-aks-nodepool1-35631116-2   Ready     agent     23m       v1.9.9
 ```
 
 ## Deploy a sample app
