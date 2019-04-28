@@ -1,5 +1,7 @@
 # Spin Up Kubernetes Cluster in AKS
 
+[![Join the chat at https://gitter.im/cloudnativewales/ProgNet](https://badges.gitter.im/cloudnativewales/ProgNet.svg)](https://gitter.im/cloudnativewales/ProgNet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Follow these steps to spin up a Kubernetes Cluster in AKS with 3 nodes
 
 You can use Shell in Azure Portal or [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
