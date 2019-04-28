@@ -17,7 +17,7 @@ If the response includes the following then the ResourceGroup has been created s
   },
 ```
 
-## Create a 3-node cluster
+## Create a 2-node cluster
 
 ```bash
 az aks create --resource-group progNetK8s --name myAKSCluster --node-count 2 --enable-addons monitoring --generate-ssh-keys
